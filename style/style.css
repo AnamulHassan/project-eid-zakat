@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  /* 10 / 16 = 0.625 = 62.5% */
+  font-size: 62.5%;
+}
+body {
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+:root {
+  --btn-background: #ef233c;
+  --btn-hover: #f24f63;
+  --btn-font: #fff;
+  --title-darkblue: #130c27;
+  --text-gary: #707070;
+  --play-btn-background: #ef233b62;
+  --container-background: #f8f9fa;
+  --feature-background: #fef4f5;
+  --cta-background: #edf2ff;
+}
+.sections {
+  transition: transform 1s, opacity 1s;
+}
+.section-hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+/* ------------- REUSEABLE CLASS ------------- */
+.title-1 {
+  font-size: 6.2rem;
+  font-weight: 700;
+  line-height: 8rem;
+  color: var(--btn-font);
+  margin-bottom: 1.6rem;
+}
+.title-2 {
+  font-size: 4.4rem;
+  color: var(--title-darkblue);
+  margin-bottom: 1.6rem;
+}
+.title-3 {
+  font-size: 2.4rem;
+  color: var(--title-darkblue);
+  margin-bottom: 0.8rem;
+}
+.btn {
+  position: relative;
+  background-color: var(--btn-background);
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  color: var(--btn-font);
+  display: inline;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  z-index: 1;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+.btn::before {
+  position: absolute;
+  content: '';
+  background: var(--btn-hover);
+  left: 40%;
+  top: -0;
+  transform: skew(-45deg);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.2s ease-out;
+}
+.btn:hover::before {
+  left: 120%;
+}
+
+.regular-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+  color: var(--btn-font);
+  margin-bottom: 1.6rem;
+}
+.regular-text-gray {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  color: var(--text-gary);
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+.small-text-gray {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: var(--text-gary);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+/* ------------- HEADER ------------- */
+.header {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgb(28, 18, 59, 1),
+      rgba(0, 0, 0, 0)
+    ),
+    url('../img/header.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 18rem;
+  margin-bottom: 11rem;
+}
+.btn-donate {
+  margin-top: 1.6rem;
+  padding: 1.6rem 2.4rem;
+}
+/* ------------- EXPLORE ------------- */
+.container-explore {
+  background-color: var(--container-background);
+  padding: 2.4rem 0;
+  margin-bottom: 11rem;
+}
+.box-explore {
+  display: flex;
+  align-items: center;
+  margin: 10rem;
+}
+.container-description {
+  width: 50vw;
+  margin: 4.8rem;
+}
+.btn-explore {
+  margin-top: 1.6rem;
+  padding: 1.6rem 2.4rem;
+}
+.container-img {
+  width: 50vw;
+}
+.container-img:nth-child(2) {
+  position: relative;
+}
+.container-img img {
+  width: 90%;
+  height: 90%;
+  border-radius: 1.2rem;
+}
+.container-img img:nth-child(2) {
+  position: absolute;
+  background-color: var(--play-btn-background);
+  padding: 2rem;
+  border-radius: 50rem;
+  width: 25%;
+  height: 25%;
+  right: 50%;
+  top: 50%;
+  transform: translate(40%, -50%);
+}
+/* ------------- DONATE ------------- */
+.text-center {
+  text-align: center;
+}
+.donation-features {
+  width: 100rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2.4rem;
+  margin: 3.2rem auto;
+}
+.feature-item {
+  background-color: var(--feature-background);
+  padding: 3.2rem 4.8rem;
+  border-radius: 1.2rem;
+}
+.feature-icon {
+  width: 20%;
+  padding: 1.6rem 0 1.2rem 0;
+}
+.feature-img {
+  display: flex;
+  flex-direction: row;
+  width: 120rem;
+  margin: 8rem auto;
+}
+.feature-img img {
+  margin: 2.4rem;
+  width: 100%;
+  border-radius: 1.2rem;
+  box-shadow: 0 0 1rem rgba(239, 35, 59, 0.381);
+}
+/* ------------- DONATION POLICY ------------- */
+.container-donation-policy {
+  margin-bottom: 11rem;
+}
+.fund-boxes {
+  display: flex;
+  width: 110rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.fund-box {
+  background-color: var(--feature-background);
+  margin: 1.2rem;
+  border-radius: 1.2rem;
+}
+.fund-img {
+  width: 100%;
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.text-area {
+  padding: 0 1.6rem 2.4rem;
+}
+.btn-donate-zakat {
+  transition: all 0.4s ease-out;
+  padding: 1.2rem 1.6rem;
+  font-size: 1.6rem;
+}
+.fund-box:hover .btn-donate-zakat:last-child {
+  transform: translateX(10px);
+}
+/* ------------- CALL TO ACTION ------------- */
+.container-cta {
+  margin-bottom: 11rem;
+}
+.form-area {
+  width: 120rem;
+  margin: 0 auto;
+  background-color: var(--feature-background);
+  border-radius: 1.2rem;
+  padding: 4.8rem 4.8rem;
+}
+.input {
+  display: block;
+  font-size: 2.4rem;
+  font-family: inherit;
+  margin-bottom: 0.8rem;
+  color: var(--title-darkblue);
+}
+.input input {
+  display: block;
+  width: 100rem;
+  font-size: 2rem;
+  outline: none;
+  border: none;
+  background: none;
+  border-bottom: 2px solid var(--text-gary);
+  margin-left: 5rem;
+  padding: 0.8rem 1.2rem;
+  color: var(--text-gary);
+}
+.btn-submit {
+  margin-top: 3.2rem;
+  padding: 1.6rem 2.4rem;
+  font-size: 1.8rem;
+}
+.payment-method {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.6rem;
+}
+.payment-method img {
+  width: 8%;
+  margin: 1.2rem 1.2rem 0;
+  border-radius: 0.8rem;
+  border: 1px solid var(--text-gary);
+}
+.title-cta {
+  font-size: 3rem;
+  color: var(--btn-background);
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 1.6rem;
+}
+
+/* ------------- FOOTER ------------- */
+.footer {
+  background-color: var(--title-darkblue);
+  height: 30rem;
+}
+.icon-eid {
+  display: flex;
+  justify-content: center;
+  padding-top: 4.8rem;
+}
+.icon-eid img {
+  width: 5%;
+}
+.footer-title {
+  font-family: 'The Nautigal', cursive;
+  color: var(--btn-background);
+  text-align: center;
+  font-size: 8.6rem;
+  font-weight: 700;
+}
+.footer-text {
+  font-size: 1.8rem;
+  color: var(--btn-font);
+  text-align: center;
+  padding-top: 1.6rem;
+}
