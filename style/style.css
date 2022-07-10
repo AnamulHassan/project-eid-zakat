@@ -188,6 +188,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  margin-bottom: 11rem;
 }
 .feature-img img {
   margin: 2.4rem;
