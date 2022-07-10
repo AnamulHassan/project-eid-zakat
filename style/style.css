@@ -126,16 +126,14 @@ body {
 }
 /* ------------- EXPLORE ------------- */
 .container-explore {
-  background-color: var(--container-background);
   margin-bottom: 11rem;
-  /* border: 1px solid black; */
-}
-.box-explore {
+  width: 130rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 8rem;
   padding: 10rem;
+  margin: 0 auto;
 }
 .container-description {
   padding-top: 2.4rem;
